@@ -541,3 +541,13 @@ Every abstraction in this repository should exist because at least one working
 implementation proved it valuable. Every canonical abstraction should eventually
 be validated by more than one implementation before it becomes part of the
 long-term architecture.
+
+## Author
+
+Developed by Matt Lambert at [Cardeo Creative](https://cardeo.ca).
+
+## Links
+
+- [swarmloop.xyz](https://swarmloop.xyz/) - SWARM online
+- [Substack](https://cardeo.substack.com/) - ongoing writing and exploration
+- [cardeo.ca](https://cardeo.ca/) - broader creative and systems work
