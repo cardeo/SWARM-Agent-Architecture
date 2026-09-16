@@ -36,6 +36,12 @@ Extract patterns only after they prove reusable.
 
 Canonical architecture requires validation across multiple implementations.
 
+SWARM is the protocol moving work through the architecture, not a seventh
+runtime layer.
+
+Entity Surface is an architectural human-review pattern, not universal UI
+doctrine.
+
 ## Repository Scope
 
 The following belong in this repository:
@@ -124,9 +130,12 @@ concepts that only seem reusable in theory.
 
 The architecture is extracted from working implementations.
 
-Grant Scout is currently the primary reference implementation.
+Grant Scout is currently the primary private reference implementation.
 
 Future implementations should refine, challenge, or simplify the architecture.
+
+They may change provisional guidance, but should not casually overwrite
+established architectural law.
 
 Architecture should evolve through evidence rather than speculation.
 
