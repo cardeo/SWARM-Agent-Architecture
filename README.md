@@ -116,6 +116,132 @@ Historical evidence of what happened, what was decided, and what resulted.
 Evidence-backed proposals and governed application of changes that may improve
 future runs.
 
+## The Six-Layer Architecture
+
+The six layers are not a fixed execution sequence. They are durable
+architectural responsibilities that a SWARM run may revisit as work changes.
+SWARM is the recursive protocol that moves through and among these
+responsibilities; the layers define where truth, evidence, judgment, and future
+change are allowed to live.
+
+```text
+                         Human judgment
+                              |
+                              v
+Identity  ---- context ----> Evaluation <---- evidence ---- Discovery
+   |                            |  ^                         |
+   |                            |  |                         |
+   |                            v  |                         v
+   |                         Guidance                  Memory
+   |                            |                         ^
+   |                            v                         |
+   +------ current truth ---- Adaptation ---- evidence ----+
+                              |
+                              v
+                       governed future change
+
+SWARM recursively Spots, Weighs, Arranges, Refines, and Makes through these
+responsibilities. The diagram shows architectural relationships, not a pipeline.
+```
+
+### Identity
+
+Identity owns current durable truth about who the agent serves and what should
+shape its work now: goals, constraints, preferences, context, standing signals,
+and other stable orientation. It may reference Guidance when humans correct or
+prioritize what matters, Memory when past evidence becomes relevant, and
+Adaptation when approved changes alter future behavior.
+
+Identity contributes the current context used by Discovery and Evaluation. It
+should not own external evidence, machine reasoning about that evidence, or a
+complete history of prior runs. It is intentionally separate from Memory:
+Identity says what is currently true enough to guide action, while Memory
+preserves what happened and why. Human authority is central here because changes
+to durable identity can redirect future work. Machine activity may surface
+signals or propose updates, but consequential changes to Identity require human
+judgment or governed Adaptation.
+
+### Discovery
+
+Discovery owns current external facts and evidence gathered for the work at
+hand. It may reference Identity to understand what to look for and may produce
+records, citations, observations, extracted facts, or other evidence artifacts.
+Its responsibility is to establish what was found without applying downstream
+judgment about what those findings mean.
+
+Discovery contributes evidence to Evaluation and may later be preserved through
+Memory. It does not own ranking, scoring, recommendation, acceptance, rejection,
+or human decision-making. It should not silently revise Identity, rewrite
+historical Memory, or smuggle interpretation into evidence. The key separation
+is: Discovery is what we found; Evaluation is what we think it means. This
+boundary keeps evidence inspectable and prevents later reasoning from quietly
+changing the factual basis of a run.
+
+### Evaluation
+
+Evaluation owns current reasoning applied to Discovery using Identity and other
+relevant context. It may consume discovered evidence, current identity,
+applicable constraints, prior Guidance, and historical Memory when those records
+are relevant. Its outputs may include assessments, comparisons, explanations,
+risk notes, recommendations, or structured reasoning artifacts.
+
+Evaluation contributes machine or system judgment, but it does not own final
+human acceptance, rejection, prioritization, or correction. It should not mutate
+Discovery evidence to make reasoning easier, and it should not update Identity
+or Memory silently. The key separation is: Evaluation is what we think it means;
+Guidance is what the human decides. Evaluation can propose, summarize, and
+explain, but human authority remains structural. Its work should remain
+reviewable so later layers can reference it without rewriting it.
+
+### Guidance
+
+Guidance owns explicit human judgment. It captures correction, acceptance,
+rejection, prioritization, redirection, approval, and other consequential human
+inputs. It may reference Discovery evidence, Evaluation reasoning, Identity
+context, Memory records, and Adaptation proposals in order to make those
+judgments legible and grounded.
+
+Guidance contributes the decision boundary that distinguishes human-directed
+agents from systems designed to remove humans from the loop. It does not own the
+external facts found by Discovery or the machine reasoning produced by
+Evaluation. It also does not automatically rewrite Identity or erase Memory;
+when human judgment changes future behavior, that change should be represented
+through explicit current state, new artifacts, or governed Adaptation.
+Guidance is where AI proposes and humans decide becomes architectural rather
+than rhetorical.
+
+### Memory
+
+Memory owns historical evidence of what happened, what was decided, and what
+resulted. It may preserve Discovery artifacts, Evaluation artifacts, Guidance
+decisions, validation outcomes, applied Adaptation records, and other historical
+traces that explain prior work. Its purpose is durable evidence, not current
+truth.
+
+Memory contributes provenance, auditability, learning context, and historical
+continuity. It should not become a generic dumping ground, a shadow identity
+store, or a mechanism for silently mutating current behavior. The separation
+between Identity and Memory matters: Identity guides the present; Memory
+preserves the past. Historical artifacts remain immutable. If past evidence
+suggests current behavior should change, that evidence can inform Adaptation,
+but Memory itself should not rewrite history or directly alter future runs.
+
+### Adaptation
+
+Adaptation owns evidence-backed proposals and governed application of changes
+that may improve future runs. It may reason from Memory, repeated Evaluation
+outcomes, Guidance patterns, validation failures, or other accumulated evidence.
+Its outputs may include proposed changes, approval requirements, application
+records, validation results, and traces showing how future behavior was changed.
+
+Adaptation does not own autonomous universal self-modification. Proposed is not
+Accepted, and Accepted is not Applied. Human approval authorizes change;
+bounded application makes the change real; validation gates Applied state.
+Receiving layers ultimately own accepted changes because they are responsible
+for their current truth, contracts, and behavior. Adaptation therefore changes
+future behavior, not historical artifacts. It exists to make improvement
+explicit, traceable, reviewable, and governed.
+
 ## SWARM Protocol
 
 SWARM is the recursive protocol that moves work through the architecture. It is

@@ -28,6 +28,8 @@ Humans decide.
 
 Layers contribute rather than rewrite.
 
+Treat layers as durable responsibilities, not sequential workflow stages.
+
 Durable artifacts matter more than transient conversations.
 
 Prefer reduction over expansion.
